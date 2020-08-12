@@ -22,6 +22,7 @@ const defaultList = [
   {romaji: 'tsu', hiragana: '\u3064'},
   {romaji: 'te', hiragana: '\u3066'},
   {romaji: 'to', hiragana: '\u3068'},
+  {romaji: 'na', hiragana: '\u306A'},
   {romaji: 'ni', hiragana: '\u306B'},
   {romaji: 'nu', hiragana: '\u306C'},
   {romaji: 'ne', hiragana: '\u306D'},
