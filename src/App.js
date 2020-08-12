@@ -88,13 +88,21 @@ export const App = () => {
       {list && (
         <>
           <button onClick={toggleCorrection}>{correction ? 'Cacher' : 'Voir'} correction</button>
-          <div style={{fontSize: '35px', width: '400px', display: "flex", flexWrap: "wrap", alignItems: "center", textAlign: "center"}}>
-            {
-              list.map(({romaji, hiragana}) => {
-                const roma = romaji.toUpperCase()
-                return <div style={{minWidth: '80px', minHeight: "75px"}}>{invert ? correction ? roma : hiragana : correction ? hiragana : roma}</div>
-              })
-            }
+          <div
+            style={{
+              fontSize: '35px',
+              width: '400px',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            {list.map(({romaji, hiragana}) => (
+              <div style={{minWidth: '80px', minHeight: '75px'}}>
+                {invert ? (correction ? romaji : hiragana) : correction ? hiragana : romaji}
+              </div>
+            ))}
           </div>
         </>
       )}
