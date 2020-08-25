@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const CharacterCheckBoxList = ({name, list, handleChange, formValues, selectAll}) => (
-  <div>
+  <div className='checkBoxList'>
     <p style={{textTransform: 'capitalize'}}>{name}</p>
     {Object.entries(list).map(([key, values]) => (
       <div key={key} style={{marginBottom: '5px'}}>
@@ -12,7 +12,7 @@ export const CharacterCheckBoxList = ({name, list, handleChange, formValues, sel
       </div>
     ))}
     <label>
-      <input type="checkbox" checked={formValues.all} onChange={(e) => selectAll(name, e.target.checked)} />
+      <input type="checkbox" checked={formValues.all} onChange={(e) => selectAll(name)} />
       All {name}
     </label>
   </div>

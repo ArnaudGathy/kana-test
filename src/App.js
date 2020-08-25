@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import {shuffle} from 'lodash'
-import {hiraganaList, katakanaList} from './charLists'
+import {hiraganaList, vocabularyList, katakanaList} from './charLists'
 import './style.css'
 import {CharacterCheckBoxList} from './CharacterCheckBoxList'
+import {VocabularyCheckBoxList} from './VocabularyCheckBoxList'
 
 const emptyFormState = {
   a: false,
@@ -17,7 +18,6 @@ const emptyFormState = {
   wa: false,
   all: false,
 }
-
 const fullFormState = {
   a: true,
   ka: true,
@@ -31,48 +31,85 @@ const fullFormState = {
   wa: true,
   all: true,
 }
-
 const defaultFormState = {
   hiragana: emptyFormState,
   katakana: emptyFormState,
 }
 
+const vocabularyFormEmptyState = {
+  Kanji: false,
+  "Formules de politesses": false,
+  "Matériel domestique": false,
+  all: false,
+}
+const vocabularyFormFullState = {
+  Kanji: true,
+  "Formules de politesses": true,
+  "Matériel domestique": true,
+  all: true,
+}
+
 export const App = () => {
   const [list, setList] = useState(null)
-  const [correction, setCorrection] = useState(false)
-  const [formState, setFormState] = useState(defaultFormState)
 
-  const generateList = () => {
+  const [formState, setFormState] = useState(defaultFormState)
+  const [vocabularyFormState, setVocabularyFormState] = useState(vocabularyFormEmptyState)
+
+  const [correction, setCorrection] = useState(false)
+
+  const generateKanaList = () => {
     const {hiragana, katakana} = formState
 
     const hiraganaDisplayList = Object.entries(hiragana).reduce((acc, [key, value]) => {
-      if(value && key !== 'all') {
+      if (value && key !== 'all') {
         acc.push(hiraganaList[key])
       }
       return acc
     }, [])
     const katakanaDisplayList = Object.entries(katakana).reduce((acc, [key, value]) => {
-      if(value && key !== 'all') {
+      if (value && key !== 'all') {
         acc.push(katakanaList[key])
       }
       return acc
     }, [])
-
-    setList(shuffle([...hiraganaDisplayList.flat(), ...katakanaDisplayList.flat()]))
+    return [...hiraganaDisplayList.flat(), ...katakanaDisplayList.flat()]
   }
+  const generateVocabularyList = () => {
+    const list = Object.entries(vocabularyFormState).reduce((acc, [key, value]) => {
+      if (value) {
+        acc.push(vocabularyList[key])
+      }
+      return acc
+    }, [])
+    return list.flat()
+  }
+  const generateLists = () => {
+    setList(shuffle([...generateKanaList(), ...generateVocabularyList()]))
+  }
+
   const toggleCorrection = () => {
     setCorrection(!correction)
   }
-  const handleChange = (listName, value) => {
-    const newState = {...formState, [listName]: {...formState[listName], [value]: !formState[listName][value]}}
+  const handleChangeKanaFormChange = (listName, value) => {
+    const newState = {
+      ...formState,
+      [listName]: {...formState[listName], [value]: !formState[listName][value]},
+    }
     setFormState(newState)
   }
-  const selectAll = (listName, isChecked) => {
+  const handleKanjiFormChange = (value) => {
+    setVocabularyFormState({...vocabularyFormState, [value]: !vocabularyFormState[value]})
+  }
+  const selectAll = (listName) => {
     const isSelected = formState[listName].all
     setFormState({...formState, [listName]: isSelected ? emptyFormState : fullFormState})
   }
+  const selectAllVocabulary = (value) => {
+    setVocabularyFormState(vocabularyFormState.all ? {...vocabularyFormEmptyState} : {...vocabularyFormFullState})
+  }
   const resetForm = () => {
     setFormState(defaultFormState)
+    setVocabularyFormState(vocabularyFormEmptyState)
   }
 
   return (
@@ -81,21 +118,26 @@ export const App = () => {
         <CharacterCheckBoxList
           name="hiragana"
           list={hiraganaList}
-          handleChange={handleChange}
+          handleChange={handleChangeKanaFormChange}
           formValues={formState.hiragana}
           selectAll={selectAll}
         />
         <CharacterCheckBoxList
           name="katakana"
           list={katakanaList}
-          handleChange={handleChange}
+          handleChange={handleChangeKanaFormChange}
           formValues={formState.katakana}
           selectAll={selectAll}
+        />
+        <VocabularyCheckBoxList
+          handleChange={handleKanjiFormChange}
+          selectAll={selectAllVocabulary}
+          vocabularyFormState={vocabularyFormState}
         />
       </div>
 
       <div className="block">
-        <button type="submit" onClick={generateList}>
+        <button type="submit" onClick={generateLists}>
           Générer la liste
         </button>
         <button type="submit" onClick={resetForm}>
@@ -111,16 +153,16 @@ export const App = () => {
               className="block"
               style={{
                 fontSize: '35px',
-                width: '400px',
+                width: '1000px',
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 textAlign: 'center',
               }}
             >
-              {list.map(({romaji, kana}) => (
-                <div style={{minWidth: '80px', minHeight: '75px'}} key={romaji}>
-                  {correction ? kana : romaji}
+              {list.map(({romaji, translated}) => (
+                <div style={{minWidth: '200px', minHeight: '75px'}} key={translated}>
+                  {correction ? translated : romaji}
                 </div>
               ))}
             </div>
