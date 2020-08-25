@@ -38,12 +38,18 @@ const defaultFormState = {
 
 const vocabularyFormEmptyState = {
   Kanji: false,
+  kanji2: false,
+  kanji3: false,
+  kanji4: false,
   "Formules de politesses": false,
   "Matériel domestique": false,
   all: false,
 }
 const vocabularyFormFullState = {
   Kanji: true,
+  kanji2: true,
+  kanji3: true,
+  kanji4: true,
   "Formules de politesses": true,
   "Matériel domestique": true,
   all: true,
@@ -76,7 +82,7 @@ export const App = () => {
   }
   const generateVocabularyList = () => {
     const list = Object.entries(vocabularyFormState).reduce((acc, [key, value]) => {
-      if (value) {
+      if (value && key !== 'all') {
         acc.push(vocabularyList[key])
       }
       return acc
