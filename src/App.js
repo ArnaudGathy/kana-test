@@ -156,19 +156,11 @@ export const App = () => {
         {list && (
           <>
             <div
-              className="block"
-              style={{
-                fontSize: '35px',
-                width: '1000px',
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                textAlign: 'center',
-              }}
+              className="block wordBlock"
             >
               {list.map(({romaji, translated}) => (
-                <div style={{minWidth: '200px', minHeight: '75px'}} key={translated}>
-                  {correction ? translated : romaji}
+                <div className="word" key={translated}>
+                  <span style={{textAlign: 'center'}}>{correction ? translated : romaji}</span>
                 </div>
               ))}
             </div>

@@ -5,3 +5,20 @@
 .checkBoxList {
     margin-right: 32px;
 }
+
+.wordBlock {
+    font-size: 35px;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    width: 200px;
+    min-height: 100px;
+    height: 100px;
+}
