@@ -165,6 +165,10 @@ export const vocabularyList = {
     {romaji: 'Le temps', translated: '時 toki'},
     {romaji: 'La neige', translated: '雪 yuki'},
   ],
-  'Formules de politesses': [{romaji: 'Bonjour (journée)', translated: 'こんにちは'}],
-  'Matériel domestique': [{romaji: 'Couteau', translated: 'ナイフ'}],
+  'Formules de politesses': [
+    {romaji: 'Bonjour (journée)', translated: 'こんにちは'},
+  ],
+  'Matériel domestique': [
+    {romaji: 'Couteau', translated: 'ナイフ'},
+  ],
 }
