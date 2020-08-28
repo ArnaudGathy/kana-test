@@ -7,18 +7,26 @@
 }
 
 .wordBlock {
-    font-size: 35px;
-    width: 1000px;
+    width: 1125px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .word {
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-width: 200px;
     width: 200px;
-    min-height: 100px;
     height: 100px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+}
+
+.bigText {
+    font-size: 40px;
+}
+
+.smallText {
+    font-size: 20px;
 }

@@ -4,6 +4,7 @@ import {hiraganaList, vocabularyList, katakanaList} from './charLists'
 import './style.css'
 import {CharacterCheckBoxList} from './CharacterCheckBoxList'
 import {VocabularyCheckBoxList} from './VocabularyCheckBoxList'
+import * as classnames from "classnames";
 
 const emptyFormState = {
   a: false,
@@ -158,9 +159,9 @@ export const App = () => {
             <div
               className="block wordBlock"
             >
-              {list.map(({romaji, translated}) => (
+              {list.map(({romaji, translated, isBig}) => (
                 <div className="word" key={translated}>
-                  <span style={{textAlign: 'center'}}>{correction ? translated : romaji}</span>
+                  <span className={classnames({bigText: isBig, smallText: !isBig})} style={{textAlign: 'center', whiteSpace: "pre-line"}}>{correction ? translated : romaji}</span>
                 </div>
               ))}
             </div>
