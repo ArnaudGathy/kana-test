@@ -4,7 +4,7 @@ import {hiraganaList, vocabularyList, katakanaList} from './charLists'
 import './style.css'
 import {CharacterCheckBoxList} from './CharacterCheckBoxList'
 import {VocabularyCheckBoxList} from './VocabularyCheckBoxList'
-import * as classnames from "classnames";
+import {Card} from './Card'
 
 const emptyFormState = {
   a: false,
@@ -42,8 +42,8 @@ const vocabularyFormEmptyState = {
   kanji2: false,
   kanji3: false,
   kanji4: false,
-  "Formules de politesses": false,
-  "Matériel domestique": false,
+  'Formules de politesses': false,
+  'Matériel domestique': false,
   all: false,
 }
 const vocabularyFormFullState = {
@@ -51,8 +51,8 @@ const vocabularyFormFullState = {
   kanji2: true,
   kanji3: true,
   kanji4: true,
-  "Formules de politesses": true,
-  "Matériel domestique": true,
+  'Formules de politesses': true,
+  'Matériel domestique': true,
   all: true,
 }
 
@@ -112,7 +112,9 @@ export const App = () => {
     setFormState({...formState, [listName]: isSelected ? emptyFormState : fullFormState})
   }
   const selectAllVocabulary = (value) => {
-    setVocabularyFormState(vocabularyFormState.all ? {...vocabularyFormEmptyState} : {...vocabularyFormFullState})
+    setVocabularyFormState(
+      vocabularyFormState.all ? {...vocabularyFormEmptyState} : {...vocabularyFormFullState}
+    )
   }
   const resetForm = () => {
     setFormState(defaultFormState)
@@ -156,16 +158,12 @@ export const App = () => {
       <div className="block">
         {list && (
           <>
-            <div
-              className="block wordBlock"
-            >
+            <button className="block" onClick={toggleCorrection}>{correction ? 'Cacher' : 'Voir'} correction</button>
+            <div className="block wordBlock">
               {list.map(({romaji, translated, isBig}) => (
-                <div className="word" key={translated}>
-                  <span className={classnames({bigText: isBig, smallText: !isBig})} style={{textAlign: 'center', whiteSpace: "pre-line"}}>{correction ? translated : romaji}</span>
-                </div>
+                <Card key={romaji} romaji={romaji} translated={translated} isBig={isBig} isCorrection={correction} />
               ))}
             </div>
-            <button onClick={toggleCorrection}>{correction ? 'Cacher' : 'Voir'} correction</button>
           </>
         )}
       </div>

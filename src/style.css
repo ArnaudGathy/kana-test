@@ -7,20 +7,32 @@
 }
 
 .wordBlock {
-    width: 1125px;
+    width: 1290px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 
 .word {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 200px;
     height: 100px;
     margin-bottom: 25px;
     margin-right: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 5px 15px 5px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.word:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.word:hover {
+    cursor: pointer;
 }
 
 .bigText {
