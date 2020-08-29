@@ -160,7 +160,7 @@ export const vocabularyList = {
     {romaji: 'Neige', translated: '雪\nyuki', isBig: true},
   ],
   'Formules de politesses': [
-    {romaji: 'Bonjour\n(journée)', translated: 'こんにちは\nkonichiwa'},
+    {romaji: 'Bonjour\n(journée)', translated: 'こんにちは\nkonnichiwa'},
     {romaji: 'Non', translated: 'いいえ\niie'},
     {romaji: 'S\'il vous plaît', translated: 'おねがいします\nonegai shimasu'},
     {romaji: 'Merci', translated: 'ありがとうございます\narigatô gozaimasu'},
