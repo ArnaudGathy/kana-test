@@ -137,7 +137,7 @@ export const katakanaList = {
 }
 
 export const vocabularyList = {
-  Kanji: [
+  "Premiers kanji": [
     {romaji: 'La personne', translated: '人\nhito', isBig: true},
     {romaji: 'Sabre', translated: '刀\nkatana', isBig: true},
     {romaji: 'Montagne', translated: '山\nyama', isBig: true},
@@ -158,6 +158,14 @@ export const vocabularyList = {
     {romaji: 'Vent', translated: '風\nkaze', isBig: true},
     {romaji: 'Temps', translated: '時\ntoki', isBig: true},
     {romaji: 'Neige', translated: '雪\nyuki', isBig: true},
+  ],
+  'Autres kanji': [
+    {romaji: 'combiné, unis', translated: '合\ngô', isBig: true},
+    {romaji: 'gens, peuple', translated: '衆\nshû', isBig: true},
+    {romaji: 'pays', translated: '国\nkoku', isBig: true},
+    {romaji: 'milieu, centre', translated: '中\nchû', isBig: true},
+    {romaji: 'Corée', translated: '韓\nkan', isBig: true},
+    {romaji: 'livre, origine', translated: '本\nhon', isBig: true},
   ],
   'Formules de politesses': [
     {romaji: 'Bonjour\n(journée)', translated: 'こんにちは\nkonichiwa'},
@@ -211,4 +219,44 @@ export const vocabularyList = {
     {romaji: 'Cuillère', translated: 'スプーン\nSUPÛN'},
     {romaji: 'Toilettes', translated: 'トイレ\nTOIRE'},
   ],
+  "Les animaux en kanji": [
+    {romaji: 'Chien', translated: '犬\ninu', isBig: true},
+    {romaji: 'Chat', translated: '猫\nneko', isBig: true},
+    {romaji: 'Oiseau', translated: '鳥\ntori', isBig: true},
+    {romaji: 'Poisson', translated: '魚\nsakana', isBig: true},
+    {romaji: 'Vache', translated: '牛\nushi', isBig: true},
+    {romaji: 'Mouton', translated: '羊\nhitsuji', isBig: true},
+    {romaji: 'Chèvre', translated: '山羊\nyagi', isBig: true},
+    {romaji: 'Cochon', translated: '豚\nbuta', isBig: true},
+    {romaji: 'Cheval', translated: '馬\numa', isBig: true},
+    {romaji: 'Poulet', translated: '鶏\nniwatori', isBig: true},
+    {romaji: 'Souris', translated: '鼠\nnezumi', isBig: true},
+    {romaji: 'Cerf', translated: '鹿\nshika', isBig: true},
+    {romaji: 'Tanuki', translated: '狸\ntanuki', isBig: true},
+    {romaji: 'Lapin', translated: '兔\nusagi', isBig: true},
+  ],
+  "Les animaux en katakana": [
+    {romaji: 'Hérisson', translated: 'ハリネズミ\nHARINEZUMI'},
+    {romaji: 'Furet', translated: 'フェレット\nFERETTO'},
+    {romaji: 'Hamster', translated: 'ハムスタ\nHAMUSÛTA'},
+    {romaji: 'Ane', translated: 'ロバ\nROBA'},
+    {romaji: 'Dromadaire', translated: 'ラクダ\nRAKUDA'},
+    {romaji: 'Ecureuil', translated: 'リス\nRISU'},
+  ],
+  "Les pays": [
+    {romaji: 'France', translated: 'フランス\nFURANSU'},
+    {romaji: 'Espagne', translated: 'スペイン\nSUPEIN'},
+    {romaji: 'Italie', translated: 'イタリア\nITARIA'},
+    {romaji: 'Allemagne', translated: 'ドイツ\nDOITSU'},
+    {romaji: 'Royaume-uni', translated: 'イギリス\nIGIRISU'},
+    {romaji: 'Angleterre', translated: 'イングランド\nINGURANDO'},
+    {romaji: 'Portugal', translated: 'ポルトガル\nPORUTOGARU'},
+    {romaji: 'Belgique', translated: 'ベルギー\nBERUGÎ'},
+    {romaji: 'Suisse', translated: 'スイス\nSUISU'},
+    {romaji: 'Russie', translated: 'ロシア\nROSHIA'},
+    {romaji: 'Etats-unis d\'amérique', translated: 'アメリカ合衆国\nAMERIKA gasshûkoku'},
+    {romaji: 'Chine', translated: '中国\nchuugoku'},
+    {romaji: 'Corée du Sud', translated: '韓国\nkankoku'},
+    {romaji: 'Japon', translated: '日本\nnihon'},
+  ]
 }

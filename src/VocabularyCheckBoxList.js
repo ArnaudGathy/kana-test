@@ -3,7 +3,7 @@ import {vocabularyList} from "./charLists";
 
 export const VocabularyCheckBoxList = ({vocabularyFormState, handleChange, selectAll}) => {
   return (<div className='checkBoxList'>
-    <p>Vocabulary</p>
+    <p>Vocabulaire</p>
     {Object.keys(vocabularyList).map(key => (
       <div key={key} style={{marginBottom: '5px'}}>
         <label>
@@ -12,9 +12,10 @@ export const VocabularyCheckBoxList = ({vocabularyFormState, handleChange, selec
         </label>
       </div>
     ))}
+    <br />
     <label>
       <input type="checkbox" checked={vocabularyFormState.all} onChange={selectAll} />
-      All vocabulary
+      Tout le vocabulaire
     </label>
   </div>)
 }

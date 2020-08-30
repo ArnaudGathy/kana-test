@@ -6,55 +6,20 @@ import {CharacterCheckBoxList} from './CharacterCheckBoxList'
 import {VocabularyCheckBoxList} from './VocabularyCheckBoxList'
 import {Card} from './Card'
 
-const emptyFormState = {
-  a: false,
-  ka: false,
-  sa: false,
-  ta: false,
-  na: false,
-  ha: false,
-  ma: false,
-  ya: false,
-  ra: false,
-  wa: false,
-  all: false,
+const computeFormState = (list, state) => {
+  return Object.keys(list).reduce((acc, key) => {
+    acc = {...acc, [key]: state}
+    return acc
+  }, {all: state})
 }
-const fullFormState = {
-  a: true,
-  ka: true,
-  sa: true,
-  ta: true,
-  na: true,
-  ha: true,
-  ma: true,
-  ya: true,
-  ra: true,
-  wa: true,
-  all: true,
-}
+const emptyFormState = computeFormState(hiraganaList, false)
+const fullFormState = computeFormState(hiraganaList, true)
 const defaultFormState = {
   hiragana: emptyFormState,
   katakana: emptyFormState,
 }
-
-const vocabularyFormEmptyState = {
-  Kanji: false,
-  kanji2: false,
-  kanji3: false,
-  kanji4: false,
-  'Formules de politesses': false,
-  'Matériel domestique': false,
-  all: false,
-}
-const vocabularyFormFullState = {
-  Kanji: true,
-  kanji2: true,
-  kanji3: true,
-  kanji4: true,
-  'Formules de politesses': true,
-  'Matériel domestique': true,
-  all: true,
-}
+const vocabularyFormEmptyState = computeFormState(vocabularyList, false)
+const vocabularyFormFullState = computeFormState(vocabularyList, true)
 
 export const App = () => {
   const [list, setList] = useState(null)
