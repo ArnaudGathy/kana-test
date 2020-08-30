@@ -168,7 +168,7 @@ export const vocabularyList = {
     {romaji: 'livre, origine', translated: '本\nhon', isBig: true},
   ],
   'Formules de politesses': [
-    {romaji: 'Bonjour\n(journée)', translated: 'こんにちは\nkonichiwa'},
+    {romaji: 'Bonjour\n(journée)', translated: 'こんにちは\nkonnichiwa'},
     {romaji: 'Non', translated: 'いいえ\niie'},
     {romaji: 'S\'il vous plaît', translated: 'おねがいします\nonegai shimasu'},
     {romaji: 'Merci', translated: 'ありがとうございます\narigatô gozaimasu'},
@@ -178,7 +178,7 @@ export const vocabularyList = {
     {romaji: 'Comment vas tu ?', translated: 'おげんきですか\nogenki desu ka'},
     {romaji: 'Je vais bien', translated: 'はいげんきです\nhai genki desu'},
     {romaji: 'Au revoir\n(adieu)', translated: 'さようなら\nsayônara'},
-    {romaji: 'Au revoir\n(à la prochaine)', translated: 'またね\nmatane'},
+    {romaji: 'Au revoir\n(à la prochaine)', translated: 'またね\nmata ne'},
     {romaji: 'Bonne nuit', translated: 'おやすみなさい\noyasumi nasai'},
     {romaji: 'A demain', translated: 'またあした\nmata ashita'},
     {romaji: 'Enchanté\n(1ere rencontre)', translated: 'はじめまして\nhajimemashite'},
