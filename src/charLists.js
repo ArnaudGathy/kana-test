@@ -159,14 +159,6 @@ export const vocabularyList = {
     {romaji: 'Temps', translated: '時\ntoki', isBig: true},
     {romaji: 'Neige', translated: '雪\nyuki', isBig: true},
   ],
-  'kanji: Pays': [
-    {romaji: 'combiné, unis', translated: '合\ngô', isBig: true},
-    {romaji: 'gens, peuple', translated: '衆\nshû', isBig: true},
-    {romaji: 'pays', translated: '国\nkoku', isBig: true},
-    {romaji: 'milieu, centre', translated: '中\nchû', isBig: true},
-    {romaji: 'Corée', translated: '韓\nkan', isBig: true},
-    {romaji: 'livre, origine', translated: '本\nhon', isBig: true},
-  ],
     "Kanji : animaux": [
     {romaji: 'Chien', translated: '犬\ninu', isBig: true},
     {romaji: 'Chat', translated: '猫\nneko', isBig: true},
@@ -255,7 +247,7 @@ export const vocabularyList = {
     {romaji: 'Suisse', translated: 'スイス\nSUISU'},
     {romaji: 'Russie', translated: 'ロシア\nROSHIA'},
     {romaji: 'Etats-unis d\'amérique', translated: 'アメリカ合衆国\nAMERIKA gasshûkoku'},
-    {romaji: 'Chine', translated: '中国\nchuugoku'},
+    {romaji: 'Chine', translated: '中国\nchûgoku'},
     {romaji: 'Corée du Sud', translated: '韓国\nkankoku'},
     {romaji: 'Japon', translated: '日本\nnihon'},
   ]
