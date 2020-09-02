@@ -229,7 +229,7 @@ export const vocabularyList = {
   "Les animaux": [
     {romaji: 'Hérisson', translated: 'ハリネズミ\nHARINEZUMI'},
     {romaji: 'Furet', translated: 'フェレット\nFERETTO'},
-    {romaji: 'Hamster', translated: 'ハムスタ\nHAMUSÛTA'},
+    {romaji: 'Hamster', translated: 'ハムスター\nHAMUSÛTA'},
     {romaji: 'Ane', translated: 'ロバ\nROBA'},
     {romaji: 'Dromadaire', translated: 'ラクダ\nRAKUDA'},
     {romaji: 'Ecureuil', translated: 'リス\nRISU'},
