@@ -11,10 +11,9 @@ export const CharacterCheckBoxList = ({name, list, handleChange, formValues, sel
         </label>
       </div>
     ))}
-    <br />
     <label>
       <input type="checkbox" checked={formValues.all} onChange={(e) => selectAll(name)} />
-      Tous les {name}
+      <em>Tous les {name}</em>
     </label>
   </div>
 )

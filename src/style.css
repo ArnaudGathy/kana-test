@@ -42,3 +42,19 @@
 .smallText {
     font-size: 20px;
 }
+
+.configList {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 16px 0 16px;
+    display: inline-block;
+    margin: 16px 0 16px 0;
+}
+
+.container {
+    margin: 16px;
+}
+
+.buttons {
+    margin-right: 32px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import {vocabularyList} from "./charLists";
+import {vocabularyList} from "./data/vocabularyList";
 
 export const VocabularyCheckBoxList = ({vocabularyFormState, handleChange, selectAll}) => {
   return (<div className='checkBoxList'>
@@ -12,10 +12,9 @@ export const VocabularyCheckBoxList = ({vocabularyFormState, handleChange, selec
         </label>
       </div>
     ))}
-    <br />
     <label>
       <input type="checkbox" checked={vocabularyFormState.all} onChange={selectAll} />
-      Tout le vocabulaire
+      <em>Tout le vocabulaire</em>
     </label>
   </div>)
 }

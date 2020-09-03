@@ -1,16 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {shuffle} from 'lodash'
-import {hiraganaList, vocabularyList, katakanaList} from './charLists'
+import {hiraganaList, katakanaList} from './data/kanaList'
 import './style.css'
 import {CharacterCheckBoxList} from './CharacterCheckBoxList'
 import {VocabularyCheckBoxList} from './VocabularyCheckBoxList'
 import {Card} from './Card'
+import {vocabularyList} from './data/vocabularyList'
 
 const computeFormState = (list, state) => {
-  return Object.keys(list).reduce((acc, key) => {
-    acc = {...acc, [key]: state}
-    return acc
-  }, {all: state})
+  return Object.keys(list).reduce(
+    (acc, key) => {
+      acc = {...acc, [key]: state}
+      return acc
+    },
+    {all: state}
+  )
 }
 const emptyFormState = computeFormState(hiraganaList, false)
 const fullFormState = computeFormState(hiraganaList, true)
@@ -28,6 +32,15 @@ export const App = () => {
   const [vocabularyFormState, setVocabularyFormState] = useState(vocabularyFormEmptyState)
 
   const [correction, setCorrection] = useState(false)
+
+  const [kanjiMode, setKanjiMode] = useState(false)
+
+  useEffect(() => {
+    generateLists()
+    if(kanjiMode) {
+       setList(list.filter(({extra}) => extra))
+    }
+  }, [vocabularyFormState, formState, kanjiMode])
 
   const generateKanaList = () => {
     const {hiragana, katakana} = formState
@@ -87,46 +100,58 @@ export const App = () => {
   }
 
   return (
-    <div>
-      <div className="block" style={{display: 'flex'}}>
-        <CharacterCheckBoxList
-          name="hiragana"
-          list={hiraganaList}
-          handleChange={handleChangeKanaFormChange}
-          formValues={formState.hiragana}
-          selectAll={selectAll}
-        />
-        <CharacterCheckBoxList
-          name="katakana"
-          list={katakanaList}
-          handleChange={handleChangeKanaFormChange}
-          formValues={formState.katakana}
-          selectAll={selectAll}
-        />
-        <VocabularyCheckBoxList
-          handleChange={handleKanjiFormChange}
-          selectAll={selectAllVocabulary}
-          vocabularyFormState={vocabularyFormState}
-        />
-      </div>
-
-      <div className="block">
-        <button type="submit" onClick={generateLists}>
-          Générer la liste
-        </button>
-        <button type="submit" onClick={resetForm}>
-          Reset
-        </button>
+    <div className="container">
+      <div className="configList">
+        <div className="block" style={{display: 'flex', marginBottom: '32px'}}>
+          <CharacterCheckBoxList
+            name="hiragana"
+            list={hiraganaList}
+            handleChange={handleChangeKanaFormChange}
+            formValues={formState.hiragana}
+            selectAll={selectAll}
+          />
+          <CharacterCheckBoxList
+            name="katakana"
+            list={katakanaList}
+            handleChange={handleChangeKanaFormChange}
+            formValues={formState.katakana}
+            selectAll={selectAll}
+          />
+          <VocabularyCheckBoxList
+            handleChange={handleKanjiFormChange}
+            selectAll={selectAllVocabulary}
+            vocabularyFormState={vocabularyFormState}
+          />
+        </div>
+        <div className="block">
+          <button className="buttons" type="submit" onClick={resetForm}>
+            Vider la liste
+          </button>
+          <label className="buttons">
+            <input type="checkbox" checked={kanjiMode} onChange={() => setKanjiMode(!kanjiMode)} />
+            <em>Mode Kanji</em>
+          </label>
+        </div>
       </div>
 
       <br />
       <div className="block">
-        {list && (
+        {list && list.length > 0 && (
           <>
-            <button className="block" onClick={toggleCorrection}>{correction ? 'Cacher' : 'Voir'} correction</button>
+            <button className="block" onClick={toggleCorrection}>
+              {correction ? 'Cacher' : 'Voir'} correction
+            </button>
             <div className="block wordBlock">
-              {list.map(({romaji, translated, isBig}) => (
-                <Card key={romaji} romaji={romaji} translated={translated} isBig={isBig} isCorrection={correction} />
+              {list.map(({romaji, translated, extra, isBig}) => (
+                <Card
+                  key={romaji}
+                  romaji={romaji}
+                  translated={translated}
+                  extra={extra}
+                  isBig={isBig}
+                  isCorrection={correction}
+                  kanjiMode={kanjiMode}
+                />
               ))}
             </div>
           </>
