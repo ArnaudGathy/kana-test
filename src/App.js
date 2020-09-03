@@ -62,7 +62,13 @@ export const App = () => {
     return list.flat()
   }
   const generateLists = () => {
-    setList(shuffle([...generateKanaList(), ...generateVocabularyList()]))
+    let list = [...generateKanaList(), ...generateVocabularyList()]
+
+    if(kanjiMode) {
+      list = list.filter(({extra}) => extra)
+    }
+
+    setList(shuffle(list))
   }
 
   const toggleCorrection = () => {
@@ -94,7 +100,7 @@ export const App = () => {
 
   useEffect(() => {
     generateLists()
-  }, [vocabularyFormState, formState])
+  }, [vocabularyFormState, formState, kanjiMode])
 
   return (
     <div className="container">
