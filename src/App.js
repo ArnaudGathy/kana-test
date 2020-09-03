@@ -35,13 +35,6 @@ export const App = () => {
 
   const [kanjiMode, setKanjiMode] = useState(false)
 
-  useEffect(() => {
-    generateLists()
-    if(kanjiMode) {
-       setList(list.filter(({extra}) => extra))
-    }
-  }, [vocabularyFormState, formState, kanjiMode])
-
   const generateKanaList = () => {
     const {hiragana, katakana} = formState
 
@@ -98,6 +91,10 @@ export const App = () => {
     setFormState(defaultFormState)
     setVocabularyFormState(vocabularyFormEmptyState)
   }
+
+  useEffect(() => {
+    generateLists()
+  }, [vocabularyFormState, formState])
 
   return (
     <div className="container">
