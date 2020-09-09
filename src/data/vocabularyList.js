@@ -110,5 +110,18 @@ export const vocabularyList = {
         {romaji: 'Chine', translated: '中国', extra: 'chûgoku'},
         {romaji: 'Corée du Sud', translated: '韓国', extra: 'kankoku'},
         {romaji: 'Japon', translated: '日本', extra: 'nihon'},
+    ],
+    "Les couleurs": [
+        {romaji: 'Couleur', translated: '色', extra: 'iro', isBig: true},
+        {romaji: 'Rouge', translated: '赤', extra: 'aka', isBig: true},
+        {romaji: 'Bleu', translated: '青', extra: 'ao', isBig: true},
+        {romaji: 'Jaune', translated: '黄色', extra: 'ki iro', isBig: true},
+        {romaji: 'Orange', translated: 'オレンジ色\nORENJI iro'},
+        {romaji: 'Violet', translated: '紫', extra: 'murasaki', isBig: true},
+        {romaji: 'Vert', translated: '緑', extra: 'midori', isBig: true},
+        {romaji: 'Blanc', translated: '白', extra: 'shiro', isBig: true},
+        {romaji: 'Noir', translated: '黒', extra: 'kuro', isBig: true},
+        {romaji: 'Gris', translated: '灰色', extra: 'hai iro', isBig: true},
+        {romaji: 'Rose', translated: 'ピンク\nPINKU'},
     ]
 }
