@@ -139,7 +139,7 @@ export const vocabularyList = {
         {romaji: 'Présenter, offrir', translated: '供', extra: 'sonaeru', isBig: true},
         {romaji: 'Ancêtre, parent', translated: '祖', extra: 'SO', isBig: true},
         {romaji: 'Paire', translated: '双', extra: 'futa', isBig: true},
-        {romaji: 'Vertu, loyauté, honneur, justice', translated: '義', extra: 'GI', isBig: true},
+        {romaji: 'Justice, loyauté', translated: '義', extra: 'GI', isBig: true},
         {romaji: 'Mes parents', translated: '両親', extra: 'ryoushin', isBig: true},
         {romaji: 'Mon enfant', translated: '子供', extra: 'kodomo', isBig: true},
         {romaji: 'Ma grand-mère', translated: '祖母', extra: 'sobo', isBig: true},
