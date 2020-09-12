@@ -94,6 +94,7 @@ export const vocabularyList = {
         {romaji: 'Ane', translated: 'ロバ\nROBA'},
         {romaji: 'Dromadaire', translated: 'ラクダ\nRAKUDA'},
         {romaji: 'Ecureuil', translated: 'リス\nRISU'},
+
     ],
     "Les pays": [
         {romaji: 'France', translated: 'フランス\nFURANSU'},
@@ -123,5 +124,9 @@ export const vocabularyList = {
         {romaji: 'Noir', translated: '黒', extra: 'kuro', isBig: true},
         {romaji: 'Gris', translated: '灰色', extra: 'hai iro', isBig: true},
         {romaji: 'Rose', translated: 'ピンク\nPINKU'},
+    ],
+    "Les membres de la famille": [
+        {romaji: 'Ma mère', translated: '母', extra: 'haha', isBig: true},
+        {romaji: 'Petit enfant', translated: 'mago'},
     ]
 }
