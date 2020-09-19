@@ -12,22 +12,21 @@ export const Card = ({romaji, translated, extra, isBig, isCorrection, kanjiMode}
       onMouseUp={() => setIsDisplayed(false)}
     >
       <div
-        className={classnames({bigText: isBig, smallText: !isBig})}
         style={{textAlign: 'center', whiteSpace: 'pre-line'}}
       >
         {isCorrection || isDisplayed ? (
           kanjiMode ? (
-            <div>{extra && extra}</div>
+            <div className="smallText">{extra && extra}</div>
           ) : (
             <>
-              <div>{translated}</div>
-              <div>{extra && extra}</div>
+              <div className={classnames({bigText: isBig})}>{translated}</div>
+              <div className="smallText">{extra && extra}</div>
             </>
           )
         ) : kanjiMode ? (
-          <div>{extra ? translated : "/"}</div>
+          <div className={classnames({bigText: isBig})}>{extra ? translated : "/"}</div>
         ) : (
-          <div>{romaji}</div>
+          <div className="smallText">{romaji}</div>
         )}
       </div>
     </div>
