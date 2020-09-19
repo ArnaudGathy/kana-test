@@ -157,5 +157,15 @@ export const vocabularyList = {
         {romaji: 'cousin(e)', translated: 'itoko'},
         {romaji: 'Ma fille', translated: 'musume'},
         {romaji: 'Mon fils', translated: 'musuko'},
+    ],
+    "Les jours de la semaine": [
+        {romaji: 'Jour de la semaine', translated: '曜日', extra: 'youbi', isBig: true},
+        {romaji: 'Dimanche', translated: '日曜日', extra: 'nichiyoubi', isBig: true},
+        {romaji: 'Lundi', translated: '月曜日', extra: 'getsuyoubi', isBig: true},
+        {romaji: 'Mardi', translated: '火曜日', extra: 'kayoubi', isBig: true},
+        {romaji: 'Mercredi', translated: '水曜日', extra: 'suiyoubi', isBig: true},
+        {romaji: 'Jeudi', translated: '木曜日', extra: 'mokuyoubi', isBig: true},
+        {romaji: 'Vendredi', translated: '金曜日', extra: 'kinyoubi', isBig: true},
+        {romaji: 'Samedi', translated: '土曜日', extra: 'doyoubi', isBig: true},
     ]
 }
