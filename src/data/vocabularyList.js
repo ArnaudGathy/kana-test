@@ -167,5 +167,19 @@ export const vocabularyList = {
         {romaji: 'Jeudi', translated: '木曜日', extra: 'mokuyoubi', isBig: true},
         {romaji: 'Vendredi', translated: '金曜日', extra: 'kinyoubi', isBig: true},
         {romaji: 'Samedi', translated: '土曜日', extra: 'doyoubi', isBig: true},
-    ]
+    ],
+    "Les nombres": [
+        {romaji: '1', translated: '一', extra: 'ICHI', isBig: true},
+        {romaji: '2', translated: '二', extra: 'NI', isBig: true},
+        {romaji: '3', translated: '三', extra: 'SAN', isBig: true},
+        {romaji: '4', translated: '四', extra: 'yon\nSHI', isBig: true},
+        {romaji: '5', translated: '五', extra: 'GO', isBig: true},
+        {romaji: '6', translated: '六', extra: 'ROKU', isBig: true},
+        {romaji: '7', translated: '七', extra: 'nana/nSHICHI', isBig: true},
+        {romaji: '8', translated: '八', extra: 'HACHI', isBig: true},
+        {romaji: '9', translated: '九', extra: 'KYU/nKU', isBig: true},
+        {romaji: '10', translated: '十', extra: 'JUU', isBig: true},
+        {romaji: '100', translated: '百', extra: 'HYAKU', isBig: true},
+        {romaji: '1000', translated: '千', extra: 'SEN', isBig: true},
+    ],
 }
