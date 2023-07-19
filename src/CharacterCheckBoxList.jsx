@@ -1,4 +1,6 @@
 import React from "react";
+import { Box, Checkbox, FormControlLabel } from "@mui/material";
+import { getAreSomethingsChecked, getIsEverythingChecked } from "./utils";
 
 export const CharacterCheckBoxList = ({
   name,
@@ -6,28 +8,40 @@ export const CharacterCheckBoxList = ({
   handleChange,
   formValues,
   selectAll,
-}) => (
-  <div className="checkBoxList">
-    <p style={{ textTransform: "capitalize" }}>{name}</p>
-    {Object.entries(list).map(([key, values]) => (
-      <div key={key} style={{ marginBottom: "5px" }}>
-        <label>
-          <input
-            type="checkbox"
-            checked={formValues[key]}
-            onChange={() => handleChange(name, key)}
+}) => {
+  const isEverythingChecked = getIsEverythingChecked(formValues);
+  const areSomethingsChecked = getAreSomethingsChecked(formValues);
+
+  return (
+    <div className="checkBoxList">
+      <h1 className="title" style={{ textTransform: "capitalize" }}>
+        {name}
+      </h1>
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={isEverythingChecked}
+            indeterminate={!isEverythingChecked && areSomethingsChecked}
+            onChange={() => selectAll(name)}
           />
-          {values.map((kana) => `${kana.romaji} `)}
-        </label>
-      </div>
-    ))}
-    <label>
-      <input
-        type="checkbox"
-        checked={formValues.all}
-        onChange={(e) => selectAll(name)}
+        }
+        label={`Tous les ${name}`}
       />
-      <em>Tous les {name}</em>
-    </label>
-  </div>
-);
+      <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
+        {Object.entries(list).map(([key, values]) => (
+          <div key={key} style={{ marginBottom: "5px" }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={formValues[key]}
+                  onChange={() => handleChange(name, key)}
+                />
+              }
+              label={values.map((kana) => `${kana.romaji} `)}
+            />
+          </div>
+        ))}
+      </Box>
+    </div>
+  );
+};

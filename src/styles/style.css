@@ -1,13 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  --sakura-text: #562135;
+  --sakura-middle: #fcd1d7;
+  --sakura-light: #ffe7de;
+
+
+  font-family: Roboto, sans-serif;
+  background: url('./images/nihonbackground.png') #ffe7de no-repeat bottom fixed;
+  background-size: 100%;
+}
+
+:global(.MuiCheckbox-root) {
+  padding: 0 !important;
+}
 
 .block {
   margin-bottom: 16px;
 }
 
+.buttonBar {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.showSolution {
+}
+
+.selectionBlock {
+  display: flex;
+  margin-bottom: 32px;
+}
+
 .checkBoxList {
   margin-right: 64px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0 0 8px 0;
 }
 
 .wordBlock {
@@ -25,14 +55,15 @@
   height: 100px;
   margin-bottom: 25px;
   margin-right: 25px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fff1f8;
   padding: 15px;
   border-radius: 5px 15px 5px 15px;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.25);
 }
 
 .word:active {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--sakura-middle);
 }
 
 .word:hover {
@@ -48,11 +79,14 @@
 }
 
 .configList {
-  border: 2px solid black;
+  border: 1px solid var(--sakura-text);
   border-radius: 10px;
-  padding: 0 16px 0 16px;
+  padding: 16px;
   display: inline-block;
   margin: 16px 0 16px 0;
+  background-color: var(--sakura-middle);
+  color: var(--sakura-text);
+  min-width: 900px;
 }
 
 .container {
@@ -61,4 +95,12 @@
 
 .buttons {
   margin-right: 32px;
+}
+
+.kanjiModeSwitch {
+  margin-left: 8px !important;
+}
+
+.summary {
+  margin-bottom: 16px;
 }
