@@ -1,60 +1,60 @@
 .block {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .checkBoxList {
-    margin-right: 64px;
+  margin-right: 64px;
 }
 
 .wordBlock {
-    width: 1290px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 1290px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .word {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px;
-    margin-bottom: 25px;
-    margin-right: 25px;
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 5px 15px 5px 15px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 5px 15px 5px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .word:active {
-    background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .word:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .bigText {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .smallText {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .configList {
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 0 16px 0 16px;
-    display: inline-block;
-    margin: 16px 0 16px 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0 16px 0 16px;
+  display: inline-block;
+  margin: 16px 0 16px 0;
 }
 
 .container {
-    margin: 16px;
+  margin: 16px;
 }
 
 .buttons {
-    margin-right: 32px;
+  margin-right: 32px;
 }
