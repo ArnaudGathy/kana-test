@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from "react";
 import { shuffle } from "lodash";
 import { hiraganaList, katakanaList } from "./data/kanaList";
-import "./style.css";
+import "./styles/style.css";
 import { CharacterCheckBoxList } from "./CharacterCheckBoxList";
 import { VocabularyCheckBoxList } from "./VocabularyCheckBoxList";
 import { Card } from "./Card";
