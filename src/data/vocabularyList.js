@@ -1,5 +1,5 @@
 export const vocabularyList = {
-  "Vocabulaire cours": [
+  "Topic 3": [
     { romaji: "sakana", translated: "魚", extra: "さかな", isBig: true },
     { romaji: "niku", translated: "肉", extra: "にく", isBig: true },
     { romaji: "tamago", translated: "卵", extra: "たまご", isBig: true },
@@ -21,6 +21,8 @@ export const vocabularyList = {
       extra: "の(みます)",
       isBig: true,
     },
+  ],
+  "Topic 4": [
     { romaji: "furu(i)", translated: "古", extra: "ふる(い)", isBig: true },
     {
       romaji: "atara(shii)",
@@ -30,40 +32,52 @@ export const vocabularyList = {
     },
     { romaji: "chii(sai)", translated: "小", extra: "ちい(さい)", isBig: true },
     { romaji: "oo(kii)", translated: "大", extra: "oo(kii)", isBig: true },
+  ],
+  "Topic 5": [
     { romaji: "ji", translated: "時", extra: "じ", isBig: true },
     { romaji: "pun", translated: "分", extra: "ぷん", isBig: true },
     { romaji: "han", translated: "半", extra: "はん", isBig: true },
+    [
+      {
+        romaji: "Jour de la semaine",
+        translated: "曜日",
+        extra: "youbi",
+        isBig: true,
+      },
+      {
+        romaji: "Dimanche",
+        translated: "日曜日",
+        extra: "nichiyoubi",
+        isBig: true,
+      },
+      {
+        romaji: "Lundi",
+        translated: "月曜日",
+        extra: "getsuyoubi",
+        isBig: true,
+      },
+      { romaji: "Mardi", translated: "火曜日", extra: "kayoubi", isBig: true },
+      {
+        romaji: "Mercredi",
+        translated: "水曜日",
+        extra: "suiyoubi",
+        isBig: true,
+      },
+      {
+        romaji: "Jeudi",
+        translated: "木曜日",
+        extra: "mokuyoubi",
+        isBig: true,
+      },
+      {
+        romaji: "Vendredi",
+        translated: "金曜日",
+        extra: "kinyoubi",
+        isBig: true,
+      },
+      { romaji: "Samedi", translated: "土曜日", extra: "doyoubi", isBig: true },
+    ],
   ],
-  // "Les jours de la semaine": [
-  //   {
-  //     romaji: "Jour de la semaine",
-  //     translated: "曜日",
-  //     extra: "youbi",
-  //     isBig: true,
-  //   },
-  //   {
-  //     romaji: "Dimanche",
-  //     translated: "日曜日",
-  //     extra: "nichiyoubi",
-  //     isBig: true,
-  //   },
-  //   { romaji: "Lundi", translated: "月曜日", extra: "getsuyoubi", isBig: true },
-  //   { romaji: "Mardi", translated: "火曜日", extra: "kayoubi", isBig: true },
-  //   {
-  //     romaji: "Mercredi",
-  //     translated: "水曜日",
-  //     extra: "suiyoubi",
-  //     isBig: true,
-  //   },
-  //   { romaji: "Jeudi", translated: "木曜日", extra: "mokuyoubi", isBig: true },
-  //   {
-  //     romaji: "Vendredi",
-  //     translated: "金曜日",
-  //     extra: "kinyoubi",
-  //     isBig: true,
-  //   },
-  //   { romaji: "Samedi", translated: "土曜日", extra: "doyoubi", isBig: true },
-  // ],
   // "Les nombres": [
   //   { romaji: "1", translated: "一", extra: "ICHI", isBig: true },
   //   { romaji: "2", translated: "二", extra: "NI", isBig: true },
