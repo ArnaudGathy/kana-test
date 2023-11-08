@@ -27,11 +27,11 @@ export const vocabularyList = {
     {
       romaji: "atara(shii)",
       translated: "新",
-      extra: "あたら しい",
+      extra: "あたら(しい)",
       isBig: true,
     },
     { romaji: "chii(sai)", translated: "小", extra: "ちい(さい)", isBig: true },
-    { romaji: "oo(kii)", translated: "大", extra: "oo(kii)", isBig: true },
+    { romaji: "oo(kii)", translated: "大", extra: "おお(きい)", isBig: true },
   ],
   "Topic 5": [
     { romaji: "ji", translated: "時", extra: "じ", isBig: true },
